@@ -3,8 +3,8 @@
 
 This one pulls straight from the MGFO prod read-replica (credentials live in
 the `.env` file in this folder) and does a full drop-and-reload of every
-table under the `mgfo` schema. It's not incremental — every run wipes and
-rebuilds those tables from scratch — but that also makes it completely safe
+table under the `mgfo` schema. It's not incremental , every run wipes and
+rebuilds those tables from scratch , but that also makes it completely safe
 to re-run whenever you want. If something looks wrong, just run it again.
 
 ```bash
@@ -36,7 +36,7 @@ python -m etl.run_all --only equipment,products   # or just target specific extr
 ```
 
 Every run writes a row to `etl.run_log` with counts and status, and also
-logs to `api_etl/logs/etl.log` — check either if you want to know what
+logs to `api_etl/logs/etl.log` , check either if you want to know what
 actually happened on a given run. For details on individual extractors,
 watermark/incremental logic, and known limitations, see
 `api_etl/README.md`. One current gap worth knowing about: the
